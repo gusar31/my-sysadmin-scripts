@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 set -Eeuo pipefail
 
 readonly N=10
@@ -37,7 +38,7 @@ run_command() {
     fi
 }
 
-printf 'Мониторинг запущен: интервал %s секунд, журнал %s\n' "$N" "$LOG_FILE"
+printf 'Мониторинг запущен: интервал %s секунд, журнал %s:\n' "$N" "$LOG_FILE"
 
 while true; do
     {
@@ -58,4 +59,5 @@ while true; do
     } >&3
 
     sleep "$N"
+
 done

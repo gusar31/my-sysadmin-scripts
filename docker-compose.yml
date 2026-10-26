@@ -1,0 +1,12 @@
+services:
+  monitor:
+    build: .
+    image: my-script
+    container_name: my-app
+    init: true
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./logs:/home/ubuntu/resource-monitor
+      - /etc/localtime:/etc/localtime:ro
+    stop_grace_period: 30s
